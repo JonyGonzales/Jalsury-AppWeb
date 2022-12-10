@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="card card-dark" style="height: fit-content">
+    <div class="card-header">
+      <h3 class="card-title">Mantenimiento de Categorias</h3>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="card-body" >
+        <div class="form-group">
+          <label>ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="idCategoria"
+            placeholder="Id Categoria"
+            [(ngModel)]="categoria.idCategoria"
+            
+          />
+        </div>
+        <div class="form-group">
+          <label>Nombre de Categoria</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomCategoria"
+            placeholder="Ingrese Categoria"
+            [(ngModel)]="categoria.nomCategoria"
+
+          />
+        </div>
+        <div class="form-group">
+          <div class="form-group">
+            <label>Estado</label>
+
+            <input
+            type="text"
+            class="form-control"
+            id="estCategoria"
+            placeholder="Estado de Categoria"
+            [(ngModel)]="categoria.estCategoria"
+
+          />
+
+            <!-- <select class="form-control"
+            id="estCategoria"
+            (ngModel)="categoria.estCategoria"
+            >
+              <option value="true">Activo</option>
+              <option value="false">Deshabilitado</option>
+            </select> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-success" style="margin: 5px">
+          Guardar
+        </button>
+        <!-- <button type="submit" class="btn btn-danger" style="margin: 5px">
+          Cancelar
+        </button> -->
+      </div>
+    </form>
+  </div>
+  <!-- </ng-template> -->
+</div>

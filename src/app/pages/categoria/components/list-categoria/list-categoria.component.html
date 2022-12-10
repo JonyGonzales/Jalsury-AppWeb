@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <!-- style="display: grid; grid-template-columns: 1fr 2fr; background-color: white;" -->
+  
+    <h1 style="text-align: center">Listado de Categorias</h1>
+    <body>
+        <div class="container clearfix hidden-md-up">
+        <table class="table table-striped">
+          <thead
+            class="text-center table-dark"
+          >
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Status</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-center"  *ngFor= "let categoria of categoria">
+              <td>{{categoria.idCategoria}}</td>
+              <td>{{categoria.nomCategoria}}</td>
+              <td *ngIf="categoria.estCategoria==true">Activo</td>
+              <td *ngIf="categoria.estCategoria==false">Inactivo</td>
+              <td>
+                <button type="button" class="btn btn-warning" >
+                  Editar
+                </button>
+                <button class="btn btn-danger" style="margin-left: 10px">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </body>
+  </div>
+  
