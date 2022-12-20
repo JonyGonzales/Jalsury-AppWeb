@@ -1,5 +1,5 @@
 export class Categoria {
-    idCategoria:number;
-    nomCategoria:string;
-    estCategoria:boolean;
+    id:number;
+    nombre:String;
+    estado:String;
 }

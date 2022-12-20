@@ -17,6 +17,14 @@ export class SidebarService {
       submenu: [
         { titulo: 'Usuarios', url: 'usuarios', icono: 'fa fa-users' }
       ],
+    }    ,
+    {
+      titulo: 'Insumos',
+      icono: 'nav-icon fas fa-boxes',
+      submenu: [
+        { titulo: 'Listado de Insumos', url: 'insumos', icono: 'fa fa-list' },
+        { titulo: 'Agregar Insumos', url: 'add-insumos', icono: 'fa fa-cubes' },
+      ],
     }
     ,
     {
@@ -32,8 +40,8 @@ export class SidebarService {
       titulo: 'Productos',
       icono: 'nav-icon fas fa-boxes',
       submenu: [
-        { titulo: 'Categorias', url: 'categorias', icono: 'fa fa-list' },
-        { titulo: 'Productos', url: 'productos', icono: 'fa fa-cubes' },
+        { titulo: 'Listado de Productos', url: 'productos', icono: 'fa fa-list' },
+        { titulo: 'Agregar Productos', url: 'add-productos', icono: 'fa fa-cubes' },
       ],
     }
 

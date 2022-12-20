@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="card card-dark" style="height: fit-content">
+      <div class="card-header">
+        <h3 class="card-title">Mantenimiento de Insumoss</h3>
+      </div>
+  
+      <div class="card">
+        <div class="card-body form-card-body">
+          <form style="margin: 20px" (ngSubmit)= "onSubmit()" #insumosForm = "ngForm">
+
+            <div class="from-group">
+              <label>Id Insumos</label>
+              <input
+                type="number"
+                class="form-control"
+                id="id"
+                [(ngModel)]="insumos.idInsumo"
+                name="id"
+                minlength="1"
+                placeholder="Id de Insumos"
+                disabled="true"
+              />
+            </div>
+
+            <div class="from-group">
+              <label>Cod de Insumos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cod"
+                [(ngModel)]="insumos.cod_insumo"
+                name="cod"
+                required
+                minlength="3"
+                maxlength="5"
+                placeholder="Cod abreviado de Insumos"
+                #nombre = "ngModel"
+              />
+  
+              <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf = "nombre.errors?.['required']">
+                  Digite un Codigo personalizado.
+                </div>
+                <div *ngIf = "nombre.errors?.['minlength']">
+                  El Codigo tiene que contener como minimo 3 caracteres
+                </div>
+                <div *ngIf = "nombre.errors?.['maxlength']">
+                  El Codigo tiene que tener como maximo 5 caracteres
+                </div>
+              </div>
+  
+            </div>
+
+            <div class="from-group">
+              <label>Nombre de Insumos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                [(ngModel)]="insumos.nom_Insumo"
+                name="nombre"
+                required
+                minlength="3"
+                maxlength="50"
+                placeholder="Nombre de la Insumos"
+                #nombre = "ngModel"
+              />
+  
+              <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf = "nombre.errors?.['required']">
+                  Digite su nombre por favor
+                </div>
+                <div *ngIf = "nombre.errors?.['minlength']">
+                  El nombre tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf = "nombre.errors?.['maxlength']">
+                  El nombre tiene que tener como maximo 10 caracteres
+                </div>
+              </div>
+  
+            </div>
+
+            <div class="from-group">
+              <label>Unidad de Medida</label>
+              <select
+              class="form-control"
+              id="nombre"
+              class="form-control"
+              [(ngModel)]="insumos.nom_Insumo"
+              name="nombre"
+              required
+              minlength="3"
+              maxlength="50"
+              placeholder="Nombre de la Insumos"
+              #nombre = "ngModel">
+            </select>
+  
+            </div>
+
+            <div class="from-group">
+              <label>Descripcion de Insumos</label>
+              <input
+                type="text"
+                class="form-control"
+                id="descripcion"
+                [(ngModel)]="insumos.descripcion_Insumo"
+                name="descripcion"
+  
+                required
+                minlength="3"
+                maxlength="50"
+                #estado = "ngModel"
+                placeholder="Ingrese Descripcion del Insumo"
+              />
+              <div class="alert alert-danger" *ngIf= "estado.invalid && (estado.dirty || estado.touched)">
+                <div *ngIf = "estado.errors?.['required']">
+                  Digite su nombre por favor
+                </div>
+                <div *ngIf = "estado.errors?.['minlength']">
+                  El nombre tiene que contener como minimo 4 caracteres
+                </div>
+                <div *ngIf = "estado.errors?.['maxlength']">
+                  El nombre tiene que tener como maximo 10 caracteres
+                </div>
+              </div>
+            </div>
+
+
+            <button
+              class="btn btn-outline-light"
+              style="margin: 10px"
+              [disabled]= "!insumosForm.form.valid"
+            >
+              Guardar
+            </button>
+            <!-- <button class="btn btn-danger" style="margin: 10px">Cancelar</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </ng-template> -->
+  

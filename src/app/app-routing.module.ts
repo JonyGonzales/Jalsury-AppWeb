@@ -13,9 +13,6 @@ const routes:Routes=[
   {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   {path:'**', component:NopageFoundComponent},
   {path:'dashboard',component:PagesComponent},
-  {path:'categorias',redirectTo:'/categoria'},
-  {path:'add-categorias',redirectTo:'/add-categoria'}
-
 ]
 
 @NgModule({

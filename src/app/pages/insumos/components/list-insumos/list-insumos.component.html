@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <!-- style="display: grid; grid-template-columns: 1fr 2fr; background-color: white;" -->
   
-    <h1 style="text-align: center">Listado de Categorias</h1>
+    <h1 style="text-align: center">Listado de Insumoss</h1>
     <body>
         <div class="container clearfix hidden-md-up">
         <table class="table table-striped">
@@ -10,21 +10,26 @@
           >
             <tr>
               <th>id</th>
+              <th>Cod</th>
               <th>Nombre</th>
-              <th>Status</th>
+              <th>Descripcion</th>
+              <th>Estado</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="text-center"  *ngFor= "let categoria of categoria">
-              <td>{{categoria.id}}</td>
-              <td>{{categoria.nombre}}</td>
-              <td>{{categoria.estado}}</td>
+            <tr class="text-center"  *ngFor= "let insumos of insumos">
+              <td>{{insumos.idInsumo}}</td>
+              <td>{{insumos.cod_insumo}}</td>
+              <td>{{insumos.nom_Insumo}}</td>
+              <td>{{insumos.descripcion_Insumo}}</td>
+              <td>{{insumos.estado_Insumo}}</td>
+
               <td>
-                <button type="button" class="btn btn-warning" (click)= "editarCategoria(categoria.id)" >
+                <button type="button" class="btn btn-warning" (click)= "editarInsumos(insumos.idInsumo)" >
                   Editar
                 </button>
-                <button class="btn btn-danger" style="margin-left: 10px" (click)= "eliminarCategoria(categoria.id)">
+                <button class="btn btn-danger" style="margin-left: 10px" (click)= "eliminarInsumos(insumos.idInsumo)">
                   Eliminar
                 </button>
               </td>

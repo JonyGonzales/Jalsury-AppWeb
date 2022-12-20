@@ -4,63 +4,88 @@
       <h3 class="card-title">Mantenimiento de Categorias</h3>
     </div>
 
-    <form (ngSubmit)="onSubmit()">
-      <div class="card-body" >
-        <div class="form-group">
-          <label>ID</label>
-          <input
-            type="number"
-            class="form-control"
-            id="idCategoria"
-            placeholder="Id Categoria"
-            [(ngModel)]="categoria.idCategoria"
-            
-          />
-        </div>
-        <div class="form-group">
-          <label>Nombre de Categoria</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nomCategoria"
-            placeholder="Ingrese Categoria"
-            [(ngModel)]="categoria.nomCategoria"
-
-          />
-        </div>
-        <div class="form-group">
-          <div class="form-group">
-            <label>Estado</label>
-
+    <div class="card">
+      <div class="card-body form-card-body">
+        <form style="margin: 20px" (ngSubmit)= "onSubmit()" #categoriaForm = "ngForm">
+          <div class="from-group">
+            <label>Id Categoria</label>
             <input
-            type="text"
-            class="form-control"
-            id="estCategoria"
-            placeholder="Estado de Categoria"
-            [(ngModel)]="categoria.estCategoria"
-
-          />
-
-            <!-- <select class="form-control"
-            id="estCategoria"
-            (ngModel)="categoria.estCategoria"
-            >
-              <option value="true">Activo</option>
-              <option value="false">Deshabilitado</option>
-            </select> -->
+              type="number"
+              class="form-control"
+              id="id"
+              [(ngModel)]="categoria.id"
+              name="id"
+              minlength="1"
+              placeholder="Id de Categoria"
+              disabled="true"
+            />
           </div>
-        </div>
-      </div>
+          <div class="from-group">
+            <label>Nombre de Categoria</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              [(ngModel)]="categoria.nombre"
+              name="nombre"
+              required
+              minlength="3"
+              maxlength="50"
+              placeholder="Nombre de la Categoria"
+              #nombre = "ngModel"
+            />
 
-      <div class="card-footer">
-        <button class="btn btn-success" style="margin: 5px">
-          Guardar
-        </button>
-        <!-- <button type="submit" class="btn btn-danger" style="margin: 5px">
-          Cancelar
-        </button> -->
+            <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+              <div *ngIf = "nombre.errors?.['required']">
+                Digite su nombre por favor
+              </div>
+              <div *ngIf = "nombre.errors?.['minlength']">
+                El nombre tiene que contener como minimo 4 caracteres
+              </div>
+              <div *ngIf = "nombre.errors?.['maxlength']">
+                El nombre tiene que tener como maximo 10 caracteres
+              </div>
+            </div>
+
+          </div>
+          <div class="from-group">
+            <label>Estado de Categoria</label>
+            <input
+              type="text"
+              class="form-control"
+              id="estado"
+              [(ngModel)]="categoria.estado"
+              name="estado"
+
+              required
+              minlength="3"
+              maxlength="50"
+              #estado = "ngModel"
+              placeholder="select True o False"
+            />
+            <div class="alert alert-danger" *ngIf= "estado.invalid && (estado.dirty || estado.touched)">
+              <div *ngIf = "estado.errors?.['required']">
+                Digite su nombre por favor
+              </div>
+              <div *ngIf = "estado.errors?.['minlength']">
+                El nombre tiene que contener como minimo 4 caracteres
+              </div>
+              <div *ngIf = "estado.errors?.['maxlength']">
+                El nombre tiene que tener como maximo 10 caracteres
+              </div>
+            </div>
+          </div>
+            <button
+            class="btn btn-outline-light"
+            style="margin: 10px"
+            [disabled]= "!categoriaForm.form.valid"
+          >
+            Guardar
+          </button>
+          <!-- <button class="btn btn-danger" style="margin: 10px">Cancelar</button> -->
+        </form>
       </div>
-    </form>
+    </div>
   </div>
-  <!-- </ng-template> -->
 </div>
+<!-- </ng-template> -->

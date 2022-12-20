@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <!-- style="display: grid; grid-template-columns: 1fr 2fr; background-color: white;" -->
+
+  <h1 style="text-align: center">Listado de Productos</h1>
+  <body>
+    <div class="container clearfix hidden-md-up">
+      <table class="table table-striped">
+        <thead class="text-center table-dark">
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Precio</th>
+            <th>Fecha Registro</th>
+            <th>Fecha Vencimiento</th>
+            <th>Categoria</th>
+            <th>Presentacion</th>
+            <th>Status</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let producto of producto">
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.fechaIngreso}}</td>
+            <td>{{ producto.fechaVencimiento}}</td>
+            <td>{{ producto.categoria.nombre }}</td>
+            <td>{{ producto.unidadMedida.nombre }}</td>
+            <td>{{ producto.estado }}</td>
+
+            <td>
+              <button
+                type="button"
+                class="btn btn-warning"
+                (click)="editarProducto(producto.id)"
+              >
+                Editar
+              </button>
+              <button
+                class="btn btn-danger"
+                style="margin-left: 10px"
+                (click)="eliminarProducto(producto.id)"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</div>
