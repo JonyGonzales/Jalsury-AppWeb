@@ -1,0 +1,27 @@
+.register-page {
+    background-image: url('../../../assets/dist/img/fondo-login.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+.register-card-body,
+.register-box {
+    background-image: url('../../../assets/dist/img/fondo-plomo.jpg');
+    background-position: center center;
+    background-size: cover;
+    color: white
+}
+
+.register-box,
+a {
+    color: white;
+}
+
+.social-auth-links,
+a {
+    color: black;
+}
+
+.link-reg {
+    color: white;
+}

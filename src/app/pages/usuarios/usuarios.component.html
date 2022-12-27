@@ -1,0 +1,49 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Lista de Usuarios</h3><br>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarUsuario">
+                            <i class="fas fa-user-plus"></i> Agregar
+                          </button>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let usuario of usuarios; let i= index;">
+                                    <td>{{i+1}}</td>
+                                    <td>{{usuario.nombre}}</td>
+                                    <td>{{usuario.email}}</td>
+                                    <td><button class="btn btn-primary btn-xs" ><i class="fas fa-key"></i> Cambio Password </button></td>
+                                    <td>{{usuario.role}}</td>
+                                    <td>{{usuario.estado}}</td>
+                                    <td><button class="btn btn-warning btn-xs mr-2" ><i class="fas fa-pencil-alt"></i></button>
+                                        <button class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
